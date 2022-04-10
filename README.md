@@ -10,7 +10,7 @@
 	- Carlos Roberto Medeiros de Lima
 	
 <p align="center">
-  <img src= "https://github.com/CarlosRobertoMedeiros/study-aws-project/blob/master/Estrutura.png" />
+  <img src= "https://github.com/CarlosRobertoMedeiros/study-aws-project/blob/main/Estrutura.png" />
 </p>
 	
 	
