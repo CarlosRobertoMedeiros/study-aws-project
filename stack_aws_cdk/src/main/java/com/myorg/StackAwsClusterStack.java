@@ -9,6 +9,8 @@ import software.constructs.Construct;
 // import software.amazon.awscdk.services.sqs.Queue;
 
 public class StackAwsClusterStack extends Stack {
+    private Cluster cluster;
+
     public StackAwsClusterStack(final Construct scope, final String id, Vpc vpc) {
         this(scope, id, null, vpc);
     }
@@ -16,7 +18,7 @@ public class StackAwsClusterStack extends Stack {
     public StackAwsClusterStack(final Construct scope, final String id, final StackProps props, Vpc vpc) {
         super(scope, id, props);
 
-        Cluster.Builder.create(this, id)
+        cluster = Cluster.Builder.create(this, id)
                 .clusterName("cluster-01")
                 .vpc(vpc)
                 .build();
@@ -28,5 +30,9 @@ public class StackAwsClusterStack extends Stack {
         // final Queue queue = Queue.Builder.create(this, "StackAwsCdkQueue")
         //         .visibilityTimeout(Duration.seconds(300))
         //         .build();
+    }
+
+    public Cluster getCluster() {
+        return cluster;
     }
 }

@@ -15,6 +15,9 @@ public class StackAwsCdkApp {
         StackAwsClusterStack stackAwsClusterStack = new StackAwsClusterStack(app, "Cluster", stackAwsVpcStack.getVpc());
         stackAwsClusterStack.addDependency(stackAwsVpcStack);
 
+        StackAwsService01Stack service01Stack = new StackAwsService01Stack(app, "Service01", stackAwsClusterStack.getCluster());
+        service01Stack.addDependency(stackAwsClusterStack);
+
 
 
         app.synth();
